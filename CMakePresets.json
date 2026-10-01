@@ -1,0 +1,66 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": { "major": 3, "minor": 25, "patch": 0 },
+  "configurePresets": [
+    {
+      "name": "ninja-debug",
+      "displayName": "Ninja / MSVC Debug",
+      "description": "Run from a Developer Command Prompt (vcvars64.bat).",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/debug",
+      "cacheVariables": { "CMAKE_BUILD_TYPE": "Debug" }
+    },
+    {
+      "name": "ninja-release",
+      "displayName": "Ninja / MSVC Release",
+      "description": "Run from a Developer Command Prompt (vcvars64.bat).",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/release",
+      "cacheVariables": { "CMAKE_BUILD_TYPE": "Release" }
+    },
+    {
+      "name": "ninja-asan",
+      "displayName": "Ninja / MSVC Debug with AddressSanitizer",
+      "description": "Needs the Visual Studio C++ AddressSanitizer component; the Build Tools workload has it.",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/asan",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "ISF_ENABLE_ASAN": "ON"
+      }
+    },
+    {
+      "name": "ninja-analyze",
+      "displayName": "Ninja / MSVC Release with static analysis",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/analyze",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "ISF_ENABLE_ANALYZE": "ON"
+      }
+    }
+  ],
+  "buildPresets": [
+    { "name": "debug", "configurePreset": "ninja-debug" },
+    { "name": "release", "configurePreset": "ninja-release" },
+    { "name": "asan", "configurePreset": "ninja-asan" },
+    { "name": "analyze", "configurePreset": "ninja-analyze" }
+  ],
+  "testPresets": [
+    {
+      "name": "debug",
+      "configurePreset": "ninja-debug",
+      "output": { "outputOnFailure": true }
+    },
+    {
+      "name": "release",
+      "configurePreset": "ninja-release",
+      "output": { "outputOnFailure": true }
+    },
+    {
+      "name": "asan",
+      "configurePreset": "ninja-asan",
+      "output": { "outputOnFailure": true }
+    }
+  ]
+}

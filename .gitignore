@@ -1,0 +1,86 @@
+# Build trees
+/build/
+/build-*/
+/out/
+/cmake-build-*/
+/_deps/
+CMakeUserPresets.json
+
+# Visual Studio / MSVC
+.vs/
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.user
+*.aps
+*.opensdf
+*.sdf
+*.suo
+*.VC.db
+*.VC.VC.opendb
+Debug/
+Release/
+RelWithDebInfo/
+MinSizeRel/
+x64/
+x86/
+ARM64/
+
+# Compiler / linker output
+*.obj
+*.o
+*.lo
+*.a
+*.lib
+*.exp
+*.pdb
+*.ilk
+*.idb
+*.exe
+*.dll
+*.so
+*.dylib
+*.dSYM/
+*.gcda
+*.gcno
+*.gcov
+*.ipch
+*.iobj
+*.ipdb
+*.pgc
+*.pgd
+
+# Test / tool scratch
+*.isfstore/
+/scratch/
+/tmp/
+/testing/
+*.log
+*.tmp
+*.partial
+*.dmp
+*.mdmp
+core
+core.*
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*~
+*.bak
+*.orig
+*.rej
+
+# OS
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Packaging / install staging
+/_install/
+/_stage/
+/_package/
+*.zip
+*.tar.gz
