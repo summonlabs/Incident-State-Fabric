@@ -6,7 +6,6 @@ durable, fenced, auditable authority rather than loosely coupled alarms and
 tickets.
 
 * **Version** 1.0.0
-* **DCCP boundary** 50
 * **Language** C++20
 * **Platform** Windows x64 (validated); see *Limitations*
 * **Dependencies** none at runtime
